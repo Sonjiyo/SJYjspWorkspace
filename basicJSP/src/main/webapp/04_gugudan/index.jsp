@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> 홈화면 </h1>
-<a href="join.jsp">회원가입</a>
-<a href="login.jsp">로그인</a>
+	<h1>구구단 게임</h1>
+	<h2>5문제를 모두 맞추면 게임 종료</h2>
+	<a href="gugudan.jsp">게임시작</a>
 </body>
 </html>
