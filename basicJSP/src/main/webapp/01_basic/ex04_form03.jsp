@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="ex05_form04.jsp">
+	<form action="ex06_form05.jsp">
 		<table border="1">
 			<tr>
 				<td>첫번째 수 :</td>
