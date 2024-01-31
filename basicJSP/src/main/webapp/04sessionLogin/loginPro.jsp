@@ -1,12 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%
-
-  boolean pass = false;
-  String msg ="";
-    %>
-    
  <script>
 function printMsg( url ,msg) {
 	alert(msg);
@@ -14,18 +8,26 @@ function printMsg( url ,msg) {
 }
 </script>
 
-<%
-	String id = request.getParameter("inputId");
-	String pw = request.getParameter("inputPw");
-	ArrayList user = (ArrayList)session.getAttribute("user");
-	pass = user.get(0).equals(id) && user.get(1).equals(pw);
-%>
-<%if(pass){%>
+  <%
+  String inputId = request.getParameter("inputId");
+  String inputPw = request.getParameter("inputPw");
+  ArrayList<String> list = (ArrayList)session.getAttribute("user");
+  boolean pass = false;
+  String dbId = list.get(0);
+  String dbPw = list.get(1);
+  if(dbId.equals(inputId)&&dbPw.equals(inputPw)){
+	  session.setAttribute("log", dbId);
+	  pass = true;
+  }
+   %>
+
+<% if(pass){ %>
 <script>
-printMsg('index.jsp', "로그인 성공");
+printMsg( 'index.jsp' ,"로그인 성공");
 </script>
-<%}else{%>
+
+<%}else{ %>
 <script>
-printMsg('index.jsp', "로그인 실패");
+printMsg( 'login.jsp' ,"로그인 실패");
 </script>
-<%}%>
+<%} %>
