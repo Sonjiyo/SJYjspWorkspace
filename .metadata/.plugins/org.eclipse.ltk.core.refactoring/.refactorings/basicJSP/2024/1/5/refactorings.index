@@ -20,3 +20,10 @@
 1706672063836	Copy file
 1706672116804	Delete element
 1706679442589	Delete element
+1706684152111	Rename resource 'boardList'
+1706684482609	Rename type 'boardVO'
+1706685132167	Copy file
+1706685624259	Rename resource 'main.jsp'
+1706685628741	Rename resource '_00main.jsp'
+1706685774546	Rename resource '_deleteAllBoard.jsp'
+1706685778192	Rename resource '_06_boardListPaging.jsp'
