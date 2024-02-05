@@ -8,5 +8,4 @@ public class BoardDAO {
 		return instance;
 	}
 	
-	
 }
