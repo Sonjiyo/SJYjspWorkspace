@@ -6,7 +6,7 @@
 	<table border="1">
 		<tr>
 			<th>번호</th>
-			<td>1</td>
+			<td>${num}</td>
 		</tr>
 		<tr>
 			<th>작성자</th>

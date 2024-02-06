@@ -73,7 +73,12 @@ public class BoardDAO {
 	}
 	
 	public void addDummyContent() {
-		for(int i =1; i<=10; i++) {
+		ArrayList<Board> list =  getBoardList();
+		int num = 1;
+		if(list.size()!=0) {
+			num = list.get(list.size()-1).getNum()+1;			
+		}
+		for(int i =num; i<=num+9; i++) {
 			String sql = "insert into board values(null,?,now(),?,?)";
 			try {
 				getConnect();
@@ -126,6 +131,16 @@ public class BoardDAO {
 	
 	public void deleteAllContent() {
 		String sql="delete from board";
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		sql="ALTER TABLE board AUTO_INCREMENT = 1";
 		try {
 			getConnect();
 			ps = conn.prepareStatement(sql);

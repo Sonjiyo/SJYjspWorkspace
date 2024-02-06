@@ -21,6 +21,15 @@
 			<td><button onclick="location.href='${ctx }/boardDelete.do?num=${vo.num }'">삭제하기</button></td>
 		</tr>
 	</c:forEach>
+	<c:if test="${startPage>3}">
+		<a href="${ctx}/boardList.do?page=${startPage-3}&start=${startPage-3}">[이전]</a>
+	</c:if>
+	<c:forEach var="i" begin="${startPage}" end="${endPage}">
+		<a href="${ctx}/boardList.do?page=${i}&start=${startPage}">[${i}]</a>
+	</c:forEach>
+	<c:if test="${totalPage>endPage}">
+		<a href="${ctx}/boardList.do?page=${startPage+3}&start=${startPage+3}">[이후]</a>
+	</c:if>
 </table>
 </body>
 </html>

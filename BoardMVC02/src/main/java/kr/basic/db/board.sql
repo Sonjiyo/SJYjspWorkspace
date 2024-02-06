@@ -16,4 +16,6 @@ insert into board values(null,'작성자5',now(),'제목5','내용5');
 
 select * from board;
 
-delete from board;
+insert into board values(null,'작성자',now(),'제목5','내용5');
+
+delete from board;ALTER TABLE board AUTO_INCREMENT = 1;
