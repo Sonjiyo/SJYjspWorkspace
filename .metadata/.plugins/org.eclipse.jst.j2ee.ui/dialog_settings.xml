@@ -7,13 +7,15 @@
 		<item value="NULL_RUNTIME"/>
 	</list>
 	<list key="J2EE_IMPORT_null">
+		<item value="C:\Users\hyein\Desktop\memberMVC\BoardMVC02.war"/>
 		<item value="C:\Users\hyein\Desktop\memberMVC\MemberMVC02.war"/>
 		<item value="C:\Users\hyein\Desktop\memberMVC\MemberMVC03.war"/>
 		<item value="C:\Users\hyein\Desktop\memberMVC03\MemberMVC3.war"/>
 		<item value="C:\Users\hyein\Desktop\mvc2_Baisc2.war"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
-		<item value="C:\Users\hyein\Desktop\memberMVC\MemberMVC01.war"/>
+		<item value="C:\Users\hyein\Desktop\memberMVC\BoardMVC02.war"/>
 		<item value="C:\Users\hyein\Desktop\memberMVC\MemberMVC02.war"/>
+		<item value="C:\Users\hyein\Desktop\memberMVC\MemberMVC01.war"/>
 	</list>
 </section>

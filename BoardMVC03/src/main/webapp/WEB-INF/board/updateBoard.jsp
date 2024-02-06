@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ include file="../../header.jsp" %>
 <h2>게시글 수정하기</h2>
 <form action="${ ctx }/boardUpdate.do" method="post" class="w-75">
 	<table border="1" class="table">

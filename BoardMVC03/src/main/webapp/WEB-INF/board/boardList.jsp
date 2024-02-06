@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file= "header.jsp" %>
+<%@ include file="../../header.jsp" %>
 <div class="d-flex flex-column align-items-end w-75 mt-4">
 	<p>전체 게시글 수 :${size }개</p>
 	<table border="1" class="table" style="text-align:center">

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BoardListMVC02</title>
+<title>BoardListMVC03</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css" />
 </head>
@@ -16,5 +16,5 @@
 		<a href="${ctx}/boardList.do">전체 게시글 확인하기</a>
 		<a href="${ctx}/boardAddDummy.do">더미 게시글 추가하기</a>
 		<a href="${ctx}/boardDeleteAll.do">전체 게시글 삭제하기</a>
-		<a href="${ctx}/board/addBoard.jsp">게시글 추가하기</a>
+		<a href="${ctx}/boardAdd.do">게시글 추가하기</a>
 	</div>
