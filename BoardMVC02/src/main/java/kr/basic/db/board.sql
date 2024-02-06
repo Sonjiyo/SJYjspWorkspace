@@ -15,3 +15,5 @@ insert into board values(null,'작성자4',now(),'제목4','내용4');
 insert into board values(null,'작성자5',now(),'제목5','내용5');
 
 select * from board;
+
+delete from board;

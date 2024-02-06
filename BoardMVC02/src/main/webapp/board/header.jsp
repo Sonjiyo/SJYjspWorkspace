@@ -11,3 +11,10 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css" />
 </head>
 <body>
+	<h1>게시판</h1>
+	<div class="container">
+		<a href="${ctx}/boardList.do">전체 게시글 확인하기</a>
+		<a href="${ctx}/boardAddDummy.do">더미 게시글 추가하기</a>
+		<a href="${ctx}/boardDeleteAll.do">전체 게시글 삭제하기</a>
+		<a href="${ctx}/board/addBoard.jsp">게시글 추가하기</a>
+	</div>

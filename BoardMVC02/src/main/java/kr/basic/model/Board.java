@@ -1,5 +1,7 @@
 package kr.basic.model;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -35,14 +37,12 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Board(int num, String user, String title, String content) {
+	public Board(int num, String user,Date date, String title, String content) {
 		super();
 		this.num = num;
 		this.user = user;
-		LocalDate now = LocalDate.now();
-		DateTimeFormatter fomat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String inputDate = now.format(fomat);
-		this.date = inputDate;
+		SimpleDateFormat fomat = new SimpleDateFormat("yyyy-MM-dd");
+		this.date = fomat.format(date);
 		this.title = title;
 		this.content = content;
 	}

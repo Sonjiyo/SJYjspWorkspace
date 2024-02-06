@@ -1,2 +1,17 @@
 @charset "UTF-8";
-*{margin:0;padding:0;box-sizing: border-box;}
+*{margin:0;padding:0;box-sizing: border-box;text-align: center;}
+a{text-decoration: none; color:darkgreen;}
+body{width: 80%;margin:0 auto;}
+h1{margin:20px 0;}
+h2{margin:30px 0;}
+.container{
+	display: flex;
+	background: yellowgreen;
+	justify-content: center;
+}
+.container a{
+	display: block;
+	height: 100%;
+	padding:20px;
+}
+.container a:hover{background: rgb(102, 179, 45); color: white;}

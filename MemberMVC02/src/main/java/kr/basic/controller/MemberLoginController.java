@@ -1,6 +1,7 @@
 package kr.basic.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +24,9 @@ public class MemberLoginController extends HttpServlet {
 		String pass = req.getParameter("pw");
 		
 		int num = MemberDAO.getInstance().checkLogin(id, pass);
+//		resp.setContentType("text/html; charset=utf-8");
+//		PrintWriter writer = resp.getWriter(); //jsp => out객체
+//		writer.println("<script>alsert('로그인 실패'); location.href='member/memberLogin.jsp'</script>");
 		if(num==0) {
 			req.setAttribute("loginFail", 1);
 			RequestDispatcher dis = req.getRequestDispatcher("member/memberLogin.jsp");
