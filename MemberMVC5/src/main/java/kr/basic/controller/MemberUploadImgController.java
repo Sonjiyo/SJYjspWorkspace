@@ -28,8 +28,9 @@ public class MemberUploadImgController implements Controller {
 		}
 		System.out.println("saveDirectory = " + saveDirectory);
 
+		//cos.jar 파일 안에 있는 내용
 		MultipartRequest multi = new MultipartRequest(request, saveDirPath.toString(), 5 * 1024 * 1024, "UTF-8",
-				new DefaultFileRenamePolicy());
+				new DefaultFileRenamePolicy()); //파일 이름이 서버 이미지 폴더 안에 중복이 되면 중복된 파일이름에 +1을 한다 => 파일 이름 중복 처리
 
 		String sFileName = null;
 		String oFileName = null;
@@ -41,7 +42,7 @@ public class MemberUploadImgController implements Controller {
 			System.out.println("fileType= " + fileType);
 
 		}
-
+		response.setContentType("text/html; charset=utf-8");
 		int num = Integer.parseInt(multi.getParameter("num"));
 
 		int cnt = MemberDAO.getInstance().memberUploadPhoto(num, oFileName, sFileName);

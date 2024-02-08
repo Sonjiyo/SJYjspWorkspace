@@ -95,6 +95,7 @@
    let input = document.querySelector("#uploadFile");
    
    input.addEventListener("change" , ()=> {
+	   
 	   let maxSize = 5 * 1024 * 1024;
 		if(input.size == 0 || input.size > maxSize ){
 			return;
