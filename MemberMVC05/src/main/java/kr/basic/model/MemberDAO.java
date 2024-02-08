@@ -24,7 +24,7 @@ public class MemberDAO {
 	
     // 데이터베이스 연동하기 => conncection 객체 생성 
    private void getConnect() {
-       String url = "jdbc:mysql://localhost:3306/testdb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
+       String url = "jdbc:mysql://localhost:3306/mvc05db?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
        String user ="root";
        String password="1234";
        try{
@@ -59,8 +59,11 @@ public class MemberDAO {
 				int age = rs.getInt("age");
 				String email = rs.getString("email");
 				String phone = rs.getString("phone");
+				String oFileName = rs.getString("oFileName");
+				String sFileName = rs.getString("sFileName");
 				
-				Member m = new Member(num,id,pass,name,age,email,phone);
+				
+				Member m = new Member(num,id,pass,name,age,email,phone,oFileName,sFileName);
 				list.add(m);
 				System.out.println(m);
 			}
@@ -110,7 +113,7 @@ public class MemberDAO {
 	
 
 	public int addOneMember(Member member) {
-		String sql ="insert into member values(null,?,?,?,?,?,?)";
+		String sql ="insert into member values(null,?,?,?,?,?,?,?,?)";
 		int row =0;
 		try {
 			getConnect();
@@ -121,10 +124,9 @@ public class MemberDAO {
 			ps.setInt(4, member.getAge());
 			ps.setString(5, member.getEmail());
 			ps.setString(6, member.getPhone());
+			ps.setString(7, member.getoFileName());
+			ps.setString(8, member.getsFileName());
 			row=ps.executeUpdate(); // 삽입한 row 갯수를 리턴 
-			System.out.println(" 회원 추가 완료 = " + row);
-			
-			
 		}catch(SQLException e) {
 			
 		}finally{
@@ -199,6 +201,33 @@ public class MemberDAO {
     	
     	return false;
     }
+    
+    public String getMemberId(int num) {
+    	ArrayList<Member> list = getMemberList();
+    	for(Member m : list) {
+    		if(m.getNum()==num) {
+    			return m.getId();
+    		}
+    	}
+    	return "";
+    }
+    
+    public void memberUploadPhoto(int num, String oFileName, String sFileName) {
+    	String sql = "update member set oFileName=? , sFileName=? where num = ?";
+    	try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, oFileName);
+			ps.setString(2, sFileName);
+			ps.setInt(3, num);
+			rs = ps.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+    }
+    
 	
 	// 데이터베이스 연결 끊기
 	private void dbClose() {

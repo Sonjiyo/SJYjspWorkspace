@@ -36,25 +36,32 @@
 		  <tr>
 		    <td>전화번호</td>
 		    <td><input class="col-12"  type="text" name="phone" value="${vo.phone}"/></td>
-		  </tr> 
-			<td>이미지</td>
-			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" width="300"></td>
-		  <tr>
-		    <td colspan="2" align="center">
-		    	<label for="file" class='col-2 btn btn-success'>사진 업로드하기</label>
-		    	<input type="file" id="file" name="ofile" style="display:none">
-		    	<input type="button" value="수정하기" class='col-2 btn btn-primary' onclick="validCheck(form)"/>
-		    	<input type="button" value="사진 삭제" class='col-2 btn btn-danger' onclick=""/>
-		    </td>
 		  </tr>
+		  <tr>
+			<td>이미지</td>
+			<td>
+			<c:if test="${vo.sFileName!=null }">
+				<img src="Uploads/${vo.sFileName}" width="300" id="photo">
+			</c:if>
+			<c:if test="${vo.sFileName==null }">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" width="300" id="photo" class="defalut">
+			</c:if>
+			</td>
+			</tr>		
 		</table>
 	</form>
+<form id="imgForm" style="padding-bottom:30px">
+	<label for="file" class='col-2 btn btn-success'>사진 업로드하기</label>
+	<input type="file" id="file" name="ofile" style="display:none" <c:if test="${loginId!=vo.id and loginId!='admin' }">disabled</c:if>>
+	<input type="button" value="수정하기" class='col-2 btn btn-primary' onclick="validCheck(form)"<c:if test="${loginId!=vo.id and loginId!='admin' }">disabled</c:if> />
+	<input type="button" value="사진 삭제" class='col-2 btn btn-danger' onclick="deleteImg()" <c:if test="${loginId!=vo.id and loginId!='admin' }">disabled</c:if>/>
+	<input type="hidden" value="${vo.num}" name="num">
+</form>
 </c:if>
 </body>
 </html>
 
 <script>
-
 function validCheck(form) {
 	if(!form.age.value.trim()){
 		alert('수정할 나이를 입력해주세요');
@@ -96,6 +103,58 @@ function validCheck(form) {
 	}
 	
 	form.submit();
+}
+
+function uploadImg() {
+	let maxSize = 5 * 1024 * 1024;
+	
+	let formData = new FormDate(form);
+	
+	fetch('memberUploadImg.do',{
+		method : 'POST',
+		body : formDate
+	})
+	.then(response => response.text())
+	.then(date => {
+		if(data == 'fail'){
+			alert('이미지 업로드 실패');
+		}else{
+			alert('이미지 업로드 성공');
+			let src = 'Uploads/' + data;
+			document.querySelector('#photo').setAttribute('src', src);
+	        document.querySelector('#photo').classList.remove("defalut");
+		}
+	})
+}
+
+function deleteImg() {
+	if(document.querySelector('.defalut')){
+		alert('기본이미지는 삭제할 수 없습니다');
+		return;
+	}
+	
+	fetch('memberDeleteImg.do', {
+	    method: "POST",
+	    headers: {
+	      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+	    },
+	    body: "num=" + document.querySelector('#num').value,
+	  })
+	    .then(response => response.text())
+	    .then(data => {
+	      if (data === 'fail') {
+	        alert('이미지 삭제 실패');
+	      } else {
+	        alert('이미지 삭제 성공');
+	        let src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
+	        document.querySelector('#photo').setAttribute('src', src);
+	        document.querySelector('#photo').classList.add("defalut");
+	   
+	      }
+	    })
+	    .catch(error => {
+	      console.log('error=', error);
+	    });
 }
 
 </script>

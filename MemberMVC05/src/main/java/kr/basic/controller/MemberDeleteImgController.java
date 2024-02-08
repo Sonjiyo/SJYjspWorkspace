@@ -11,7 +11,11 @@ public class MemberDeleteImgController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		int num = Integer.parseInt(req.getParameter("num"));
+		
+		String saveDirectory = req.getServletContext().getRealPath("/Uploads");
+		
 		return null;
 	}
 

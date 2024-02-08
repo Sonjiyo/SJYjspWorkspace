@@ -8,13 +8,28 @@ public class Member {
 	private int age;
 	private String email;
 	private String phone;
+	private String oFileName;
+	private String sFileName;
+	
 	public int getNum() {
 		return num;
 	}
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public Member(int num, String id, String pass, String name, int age, String email, String phone) {
+	public String getoFileName() {
+		return oFileName;
+	}
+	public void setoFileName(String oFileName) {
+		this.oFileName = oFileName;
+	}
+	public String getsFileName() {
+		return sFileName;
+	}
+	public void setsFileName(String sFileName) {
+		this.sFileName = sFileName;
+	}
+	public Member(int num, String id, String pass, String name, int age, String email, String phone, String oFileName, String sFileName) {
 		super();
 		this.num = num;
 		this.id = id;
@@ -23,6 +38,8 @@ public class Member {
 		this.age = age;
 		this.email = email;
 		this.phone = phone;
+		this.oFileName = oFileName;
+		this.sFileName = sFileName;
 	}
 	public String getId() {
 		return id;

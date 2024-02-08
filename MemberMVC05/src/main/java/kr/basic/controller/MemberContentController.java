@@ -21,6 +21,10 @@ public class MemberContentController implements Controller{
 		
 		Member m = MemberDAO.getInstance().getMemberByNum(num);
 		req.setAttribute("vo", m);
+
+		if(req.getSession().getAttribute("log")!=null) {
+			req.setAttribute("loginId", MemberDAO.getInstance().getMemberId((int)req.getSession().getAttribute("log")));			
+		}
 		
 		return "memberContent";
 	}

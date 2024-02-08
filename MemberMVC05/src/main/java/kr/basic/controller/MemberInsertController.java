@@ -28,7 +28,7 @@ public class MemberInsertController implements Controller{
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
 		
-		Member m = new Member(0, id, pass, name, age, email, phone);
+		Member m = new Member(0, id, pass, name, age, email, phone, null, null);
 		
 		MemberDAO.getInstance().addOneMember(m);
 		
