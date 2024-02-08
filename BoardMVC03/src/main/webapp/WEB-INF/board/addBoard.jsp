@@ -21,7 +21,7 @@
 			<td><textarea cols="20" rows="10" name="content" class="form-control"></textarea></td>
 		</tr>
 		<tr style="text-align:center">
-			<td colspan="2"><button class="btn btn-dark">작성완료</button></td>
+			<td colspan="2"><input type="button" class="btn btn-dark" onclick="validCheck(form)" value="작성완료"></td>
 		</tr>
 	</table>
 </form>

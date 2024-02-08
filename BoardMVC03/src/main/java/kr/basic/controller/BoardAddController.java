@@ -20,6 +20,8 @@ public class BoardAddController implements Controller{
 		String ctx = req.getContextPath();
 		
 		if(req.getParameter("user")==null) {
+			int num = BoardDAO.getInstance().getBoardList().get(BoardDAO.getInstance().getBoardList().size()-1).getNum()+1;
+			req.setAttribute("num", num);
 			return "addBoard";
 		}
 		
@@ -28,8 +30,6 @@ public class BoardAddController implements Controller{
 		String content = req.getParameter("content");
 		
 		BoardDAO.getInstance().addOneContent(user, title, content);
-		int num = BoardDAO.getInstance().getBoardList().get(BoardDAO.getInstance().getBoardList().size()-1).getNum()+1;
-		req.setAttribute("num", num);
 		
 		return "<script>alert('게시글 추가 완료');location.href='"+ctx+"/boardList.do'</script>";
 	}

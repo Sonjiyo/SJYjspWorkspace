@@ -12,11 +12,9 @@
     <fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
     <fullyQualifiedTypeName name="kr.basic.model.Member"/>
     <fullyQualifiedTypeName name="javax.swing.RepaintManager"/>
-    <fullyQualifiedTypeName name="kr.basic.model.MemberDAO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -27,5 +25,25 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="kr.basic.model.BoardDAO"/>
     <fullyQualifiedTypeName name="kr.basic.model.Board"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.PrintServiceAttributeSet"/>
+    <fullyQualifiedTypeName name="kr.basic.frontcontroller.HandlerMapping"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.MemberListController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.MemberLogoutController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.MemberLoginController"/>
+    <fullyQualifiedTypeName name="kr.basic.frontcontroller.ViewResolver"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="kr.basic.frontController.HandlerMapping"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="kr.basic.frontController.ViewResolver"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.Controller"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardAddController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardAddDummyController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardContentController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardDeleteAllController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardDeleteController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardListController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.BoardUpdateController"/>
+    <fullyQualifiedTypeName name="kr.basic.controller.MemberIdvaildController"/>
+    <fullyQualifiedTypeName name="kr.basic.model.MemberDAO"/>
 </qualifiedTypeNameHistroy>

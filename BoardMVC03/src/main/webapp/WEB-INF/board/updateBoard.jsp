@@ -25,7 +25,7 @@
 		<tr style="text-align:center">
 			<td colspan="4">
 				<input type="hidden" name="num" value="${ vo.num }">
-				<button class="btn btn-dark">수정하기</button>
+				<input type="button" class="btn btn-dark" onclick="validCheck(form)" value="수정완료">
 			</td>
 		</tr>
 	</table>
